@@ -31,7 +31,14 @@ const concatedOptional = takingTwoNames("jhon")
 //Object literal types solution
 
 const userDetails = (user:{first:string, last:string, isAdmin:boolean}) => {
-  return `${user.first} ${user.last} ${user.isAdmin}`
+  return (
+  
+      <div className="flex gap-3">
+        <h1>{user.first}</h1>
+        <h1>{user.last}</h1>
+        <h1 className="text-amber-300 font-light">{String(user.isAdmin)}</h1>
+      </div>
+  )
 }
 
 const userDetailPrint = userDetails({
@@ -47,13 +54,13 @@ function App() {
 
   return (
     <div className="bg-gray-900 min-h-screen text-white">
-      <h1 className="text-red-600 text-9xl">{name}</h1>
-      <h2 className="text-blue-500 text-7xl">{tripleNine}</h2>
-      <h3 className="text-8xl font-bold text-teal-500">{result}</h3>
+      <h1 className="text-red-600 text-4xl">{name}</h1>
+      <h2 className="text-blue-500 text-4xl">{tripleNine}</h2>
+      <h3 className="text-4xl font-bold text-teal-500">{result}</h3>
       <h3>{resultTwo}</h3>
-      <h2 className="text-8xl font-bold text-teal-500">{concatedNames}</h2>
-      <h2 className="text-8xl font-bold text-teal-500">{concatedOptional}</h2>
-      <h2 className="text-8xl font-bold text-cyan-600">{userDetailPrint}</h2>
+      <h2 className="text-4xl font-bold text-teal-500">{concatedNames}</h2>
+      <h2 className="text-4xl font-bold text-teal-500">{concatedOptional}</h2>
+      <h2 className="text-4xl font-bold text-cyan-600">{userDetailPrint}</h2>
     </div>
   )
 }
