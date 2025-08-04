@@ -17,7 +17,7 @@ const resultTwo = concatTwoStrings("Hello", "World")
 
 //Optional function parameters
 
-const takingTwoNames = (first:string, last?:string) => {
+const takingTwoNames = (first:string, last = "default") => {
   if(!last){
     return first
   }
@@ -27,6 +27,19 @@ const takingTwoNames = (first:string, last?:string) => {
 
 const concatedNames = takingTwoNames("Fasal","Mhd")
 const concatedOptional = takingTwoNames("jhon")
+
+//Object literal types solution
+
+const userDetails = (user:{first:string, last:string, isAdmin:boolean}) => {
+  return `${user.first} ${user.last} ${user.isAdmin}`
+}
+
+const userDetailPrint = userDetails({
+  first:"Fasal",
+  last:"Muhammed",
+  isAdmin:true
+})
+
 
 function App() {
   
@@ -40,6 +53,7 @@ function App() {
       <h3>{resultTwo}</h3>
       <h2 className="text-8xl font-bold text-teal-500">{concatedNames}</h2>
       <h2 className="text-8xl font-bold text-teal-500">{concatedOptional}</h2>
+      <h2 className="text-8xl font-bold text-cyan-600">{userDetailPrint}</h2>
     </div>
   )
 }
